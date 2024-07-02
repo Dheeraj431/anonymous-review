@@ -25,7 +25,7 @@ import { Loader2 } from "lucide-react"
 
 
 
-export  default function TextareaForm() {
+export  default function SendMessage() {
 	const [isSendingMessage, setIsSendingMessage] = useState(false);
 
 
@@ -64,41 +64,43 @@ export  default function TextareaForm() {
 	}
 
 	return (
-		<div className="container mx-auto my-8 p-6 bg-white rounded max-w-4xl">
-			<h1 className="text-4xl font-bold mb-6 text-center">
-				Public Profile Link
-      	</h1>
-		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-				<FormField
-					control={form.control}
-					name="content"
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Send a anonymous message to @{username}</FormLabel>
-							<FormControl>
-								<Textarea
-									placeholder="Start typing..."
-									className="resize-none"
-									{...field}
-								/>
-							</FormControl>
-							<FormDescription>
-								
-							</FormDescription>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<div className="flex justify-center">
-					{!isSendingMessage ? <Button type="submit">Submit</Button> : <Button disabled>
-						<Loader2 className="mr-2 h-4 w-4 animate-spin" />
-						Please wait
-					</Button>}
-				</div>
-			</form>
-		</Form>
-		</div>
-	)
+		<>
+			<div className="container mx-auto my-8 p-6 bg-white rounded max-w-4xl">
+				<h1 className="text-4xl font-bold mb-6 text-center">
+					Public Profile Link
+				</h1>
+				<Form {...form}>
+					<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+						<FormField
+							control={form.control}
+							name="content"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Send a anonymous message to @{username}</FormLabel>
+									<FormControl>
+										<Textarea
+											placeholder="Start typing..."
+											className="resize-none"
+											{...field}
+										/>
+									</FormControl>
+									<FormDescription>
+										
+									</FormDescription>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+						<div className="flex justify-center">
+							{!isSendingMessage ? <Button type="submit">Submit</Button> : <Button disabled>
+								<Loader2 className="mr-2 h-4 w-4 animate-spin" />
+								Please wait
+							</Button>}
+						</div>
+					</form>
+				</Form>
+			</div>
+		</>
+	);
 }
 
