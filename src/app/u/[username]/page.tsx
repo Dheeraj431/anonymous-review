@@ -102,4 +102,3 @@ export function TextareaForm() {
 	)
 }
 
-export default TextareaForm;
