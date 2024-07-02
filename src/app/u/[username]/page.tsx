@@ -25,7 +25,7 @@ import { Loader2 } from "lucide-react"
 
 
 
-export function TextareaForm() {
+export  default function TextareaForm() {
 	const [isSendingMessage, setIsSendingMessage] = useState(false);
 
 
